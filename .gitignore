@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 #ignore the files
 /node_modules/*
+||||||| merged common ancestors
+=======
+#do not upload nodes
+/node_modules/*
+>>>>>>> origin/master
