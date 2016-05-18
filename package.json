@@ -1,0 +1,29 @@
+{
+  "name": "gulp_testing",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-htmlincluder": "^0.1.0"
+  },
+  "description": "Playing with the Gulp module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ybarshchevskyi/gulp_testing.git"
+  },
+  "keywords": [
+    "gulp",
+    "testing"
+  ],
+  "author": "Yevhen Barshchevskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ybarshchevskyi/gulp_testing/issues"
+  },
+  "homepage": "https://github.com/ybarshchevskyi/gulp_testing#readme"
+}
