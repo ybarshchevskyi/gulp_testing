@@ -11,6 +11,7 @@ gulp.task('mergeFile', function(){
           .pipe(concatCSS('style.css'))
         .pipe(cleanCSS({compatibility: 'ie8'}))
           .pipe(gulp.dest('build/'))
+          .pipe(connect.reload())
           })
 
 //Include HTML files into one file
@@ -18,6 +19,7 @@ gulp.task('html', function(){
       gulp.src('dev/**/*.html')
     	.pipe(includer())
         .pipe(gulp.dest('build/'))
+        .pipe(connect.reload())
 })
 
 //Gulp connect
@@ -26,4 +28,16 @@ gulp.task('connect', function() {
     root: 'build',
     livereload: true
   });
+});
+
+//Automative page refreshing
+gulp.start('default', function(){
+    gulp.start('connect', 'html', 'mergeFile');
+    
+    gulp.watch(['dev/**/*.html'], function(event){
+        gulp.start('html');
+                                            });
+    gulp.watch(['dev/css/**/*.css'], function(event){
+        gulp.start('mergeFile');
+    });
 });
