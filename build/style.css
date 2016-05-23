@@ -1,17 +1,1 @@
-div {
-  background-color: aqua;
-  opacity: 0.5;
-}
-
-p {
-  color: red;
-  text-decoration: line-through;
-}
-h1 {
-  color: black;
-  border: 1px solid black;
-}
-
-h2 {
-  background-color: black;
-}
+div{background-color:#0ff;opacity:.5}p{color:red;text-decoration:line-through}h1{color:#000;border:1px solid #000}h2{background-color:#000}
