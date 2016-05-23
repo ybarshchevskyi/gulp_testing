@@ -2,17 +2,34 @@ var gulp = require('gulp');
 var concatCSS = require('gulp-concat-css');
 var cleanCSS = require('gulp-clean-css');
 var includer = require('gulp-htmlincluder');
+var htmlIncluder = require('gulp-htmlincluder');
+var includer = require('gulp-htmlincluder');
 var connect = require('gulp-connect');
-var livereload = require('livereload');
+var livereload = require('gulp-livereload');
+
 
 //Merge and clean css
 gulp.task('mergeFile', function(){
     gulp.src('dev/css/*.css')
           .pipe(concatCSS('style.css'))
+
+ .pipe(cleanCSS({compatibility:'ie8'}))
+
           .pipe(cleanCSS({compatibility: 'ie8'}))
+
           .pipe(gulp.dest('build/'))
-          .pipe(connect.reload())
+
           })
+
+// Include HTML
+ 
+gulp.task('html', function() {
+    gulp.src('dev/**/*.html')
+    	.pipe(includer())
+        .pipe(gulp.dest('build/'));
+});
+
+//      .pipe(connect.reload())
 
 //Include HTML files into one file
 gulp.task('html', function(){
@@ -41,3 +58,4 @@ gulp.task('default', function(){
         gulp.start('mergeFile');
     });
 });
+
